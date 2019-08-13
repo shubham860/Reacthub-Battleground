@@ -4,6 +4,7 @@ import axios from 'axios'
 import Player1 from './Player1'
 import Player2 from './Player2'
 import './css/Field.css'
+import logo from './Images/logo.png';
 
 const client_id =  'Iv1.713715a78bd3e712'
 const client_secret =  '15fdb5692f7730109c2eb41ceefcc9360be24de6'
@@ -120,30 +121,46 @@ class Field extends React.Component {
    return(
 
       <div className="container">
+        <div className='row'>
+          <h1 class='white-text heading' id="mainhead"><span>BATTLE </span><span class='ground'> GROUND</span></h1>
+        </div>
         <div className="row"  id="main">
+          <div className="col s4">
 
-          <div className="col m6">
-
-           { this.state.hide1 && <div className='button'><a class="btn-floating btn-large waves-effect waves-light red " onClick={this.toggle1}><i class="material-icons">+</i></a></div> }
+           { this.state.hide1 && <div className='button'>
+             <h5 class='white-text'>Player A</h5><br/>
+             <a class="btn-floating btn-large waves-effect waves-light green darken-1 " onClick={this.toggle1}><i class="material-icons">+</i></a>
+            </div>
+           }
 
            {
             this.state.show1 && <div className="Player1">
-                                <input type='text' value={username1} onChange={this.input1} />
-                                <button type='button' onClick={this.handler1}>Submit</button>
+                                <input type='text' className='input' value={username1} onChange={this.input1} placeholder='GitHub Username'/><br/><br/>
+                                <a class="waves-effect waves-light btn-small green darken-1 button" onClick={this.handler1}>Submit</a>
+
                                 <Player1 avtar1={avtar1} username1={username1} name1={name1} bio1={bio1} followers1={followers1} following1={following1} created1={created1} link1={link1} location1={location1} repo1={repo1} />
                                </div>
            }
 
            </div>
 
-        <div className="col m6">
+            <div className='col s4'>
+              <img src={logo} className="img"/>
+            </div>
 
-          { this.state.hide2 && <div className='button'><a class="btn-floating btn-large waves-effect waves-light red" onClick={this.toggle2}><i class="material-icons">+</i></a></div> }
+        <div className="col s4">
+
+          { this.state.hide2 && <div className='button'>
+            <h5 class='white-text'>Player B</h5><br/>
+            <a class="btn-floating btn-large waves-effect waves-light green darken-1" onClick={this.toggle2}><i class="material-icons">+</i></a>
+            </div>
+          }
 
           {
             this.state.show2 && <div className='Player2'>
-                                  <input type='text' value={username2} onChange={this.input2} />
-                                  <button type='button' onClick={this.handler2}>Submit</button>
+                                  <input type='text' className='input' value={username2} onChange={this.input2} placeholder='GitHub Username' /><br/><br/>
+                                  <a class="waves-effect waves-light btn-small green darken-1 button" onClick={this.handler2}>Submit</a>
+
                                   <Player2 avtar2={avtar2} username2={username2} name2={name2} bio2={bio2} followers2={followers2} following2={following2} created2={created2} link2={link2} location2={location2} repos2={repo2} />
                                 </div>
           }
