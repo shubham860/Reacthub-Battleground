@@ -171,7 +171,7 @@ class Field extends React.Component {
 
                                 </div>
           }
-          <Player2 avtar2={avtar2} username2={username2} name2={name2} bio2={bio2} followers2={followers2} following2={following2} created2={created2} link2={link2} location2={location2} repos2={repo2} show2={show2} profile2={profile2}/>
+          <Player2 avtar2={avtar2} username2={username2} name2={name2} bio2={bio2} followers2={followers2} following2={following2} created2={created2} link2={link2} location2={location2} repo2={repo2} show2={show2} profile2={profile2}/>
 
         </div>
 
