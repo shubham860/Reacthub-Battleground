@@ -37,6 +37,8 @@ class Field extends React.Component {
       hide1 : true,
       show2 : false,
       hide2 : true,
+      profile1 : false,
+      profile2 : false
     }
   }
 
@@ -68,8 +70,11 @@ class Field extends React.Component {
               created1 : metrices.created_at,
               link1 : metrices.html_url,
               location1 : metrices.location,
-              repo1 : metrices.public_repos
+              repo1 : metrices.public_repos,
+              show1 : false,
+              profile1:true
             })
+
         })
         .catch(error => {
     				alert('Invalid Inputs')
@@ -93,7 +98,9 @@ class Field extends React.Component {
               created2 : metrices.created_at,
               link2 : metrices.html_url,
               location2 : metrices.location,
-              repo2 : metrices.public_repos
+              repo2 : metrices.public_repos,
+              show2 : false,
+              profile2 : true
             })
         })
         .catch(error => {
@@ -117,7 +124,7 @@ class Field extends React.Component {
   }
 
   render () {
-    const {avtar1,avtar2,username1,username2,name1,name2,bio1,bio2,followers1,followers2,following1,following2,created1,created2,link1,link2,repo1,repo2,location1,location2} = this.state
+    const {avtar1,avtar2,username1,username2,name1,name2,bio1,bio2,followers1,followers2,following1,following2,created1,created2,link1,link2,repo1,repo2,location1,location2,show1,show2,profile1,profile2} = this.state
    return(
 
       <div className="container">
@@ -136,11 +143,12 @@ class Field extends React.Component {
            {
             this.state.show1 && <div className="Player1">
                                 <input type='text' className='input' value={username1} onChange={this.input1} placeholder='GitHub Username'/><br/><br/>
-                                <a class="waves-effect waves-light btn-small green darken-1 button" onClick={this.handler1}>Submit</a>
+                                  <a class="waves-effect waves-light btn-small green darken-1 button" onClick={this.handler1}>Submit</a>
 
-                                <Player1 avtar1={avtar1} username1={username1} name1={name1} bio1={bio1} followers1={followers1} following1={following1} created1={created1} link1={link1} location1={location1} repo1={repo1} />
+
                                </div>
            }
+                 <Player1 avtar1={avtar1} username1={username1} name1={name1} bio1={bio1} followers1={followers1} following1={following1} created1={created1} link1={link1} location1={location1} repo1={repo1} show1={show1} profile1={profile1}/>
 
            </div>
 
@@ -161,9 +169,10 @@ class Field extends React.Component {
                                   <input type='text' className='input' value={username2} onChange={this.input2} placeholder='GitHub Username' /><br/><br/>
                                   <a class="waves-effect waves-light btn-small green darken-1 button" onClick={this.handler2}>Submit</a>
 
-                                  <Player2 avtar2={avtar2} username2={username2} name2={name2} bio2={bio2} followers2={followers2} following2={following2} created2={created2} link2={link2} location2={location2} repos2={repo2} />
                                 </div>
           }
+          <Player2 avtar2={avtar2} username2={username2} name2={name2} bio2={bio2} followers2={followers2} following2={following2} created2={created2} link2={link2} location2={location2} repos2={repo2} show2={show2} profile2={profile2}/>
+
         </div>
 
       </div>
