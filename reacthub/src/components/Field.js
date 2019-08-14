@@ -38,7 +38,9 @@ class Field extends React.Component {
       show2 : false,
       hide2 : true,
       profile1 : false,
-      profile2 : false
+      profile2 : false,
+      score1 : '',
+      score2 : ''
     }
   }
 
@@ -72,7 +74,10 @@ class Field extends React.Component {
               location1 : metrices.location,
               repo1 : metrices.public_repos,
               show1 : false,
-              profile1:true
+              profile1:true,
+              winner : '',
+              score1 : '',
+              score2 : ''
             })
 
         })
@@ -123,8 +128,25 @@ class Field extends React.Component {
      })
   }
 
+
+
+  click = event =>{
+    const repofol_Sum1 = this.state.repo1 + this.state.followers1
+    const repofol_Sum2 = this.state.repo2 + this.state.followers2
+    repofol_Sum1 > repofol_Sum2 ? (this.setState({
+      winner : 'Winner A',
+      score1 :  `${repofol_Sum1}`,
+      score2 : `${repofol_Sum2}`
+    })
+     ):(this.setState({
+       winner : 'Winner B',
+       score1 :  `${repofol_Sum1}`,
+       score2 : `${repofol_Sum2}`
+    }))
+  }
+
   render () {
-    const {avtar1,avtar2,username1,username2,name1,name2,bio1,bio2,followers1,followers2,following1,following2,created1,created2,link1,link2,repo1,repo2,location1,location2,show1,show2,profile1,profile2} = this.state
+    const {avtar1,avtar2,username1,username2,name1,name2,bio1,bio2,followers1,followers2,following1,following2,created1,created2,link1,link2,repo1,repo2,location1,location2,show1,show2,profile1,profile2,winner,score1,score2} = this.state
    return(
 
       <div className="container">
@@ -153,7 +175,7 @@ class Field extends React.Component {
            </div>
 
             <div className='col s4'>
-              <img src={logo} className="img"/>
+              <a onClick={this.click}><img src={logo} className="img"/></a>
             </div>
 
         <div className="col s4">
@@ -176,6 +198,22 @@ class Field extends React.Component {
         </div>
 
       </div>
+
+      <div className='container score'>
+        <div class='row'>
+          <div class='col s4'>
+            <p>{score1}</p>
+          </div>
+          <div class='col s4'>
+            <p>{winner}</p>
+          </div>
+          <div class='col s4'>
+            <p>{score2}</p>
+          </div>
+        </div>
+      </div>
+
+
     </div>
 
    )}
