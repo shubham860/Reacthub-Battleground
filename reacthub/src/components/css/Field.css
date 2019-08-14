@@ -1,5 +1,5 @@
 #main{
-  margin-top: 200px;
+  margin-top: 170px;
 }
 
 
@@ -17,6 +17,7 @@
       height:80%;
       width :80%;
       margin-top: -80px;
+      z-index: 1;
     }
 
     .ground{
@@ -31,7 +32,7 @@
       margin-top: 150px;
     }
     .score{
-      font-size:30px;
+      font-size:25px;
     }
     .winner{
       background-color: #43a047;
@@ -42,7 +43,7 @@
     .curve{
       border-radius: 30px;
     }
-    
+
 }
 
 
