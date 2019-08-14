@@ -19,7 +19,6 @@
       margin-top: -80px;
     }
 
-
     .ground{
       background-color: #43a047;
       padding: 20px;
@@ -27,12 +26,23 @@
       border-radius: 200px;
     }
 
+
     .heading{
       margin-top: 150px;
     }
     .score{
-      font-size: 
+      font-size:30px;
     }
+    .winner{
+      background-color: #43a047;
+      padding: 10px;
+      border: 2px solid #43a047;
+      border-radius: 200px;
+    }
+    .curve{
+      border-radius: 30px;
+    }
+    
 }
 
 

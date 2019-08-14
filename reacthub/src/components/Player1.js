@@ -29,7 +29,6 @@ class Player1 extends React.Component {
                            </div>
                          </div>
                          <a class="waves-effect waves-light btn-small green darken-1 button" href={link1} target="_blank">See full Profile</a>
-
                        </div>
                      </div>
        }
