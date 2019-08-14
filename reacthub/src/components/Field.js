@@ -206,7 +206,7 @@ class Field extends React.Component {
           </div>
           <div class='col s4'>
             <p class='white curve'>{winner}</p>
-          </div>
+            </div>
           <div class='col s4'>
             <p class='white curve'>{score2}</p>
           </div>
